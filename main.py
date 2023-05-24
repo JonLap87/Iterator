@@ -23,7 +23,7 @@ class FlatIterator:
 		if self.nested_list_cursor >= len(self.main_list[self.main_list_cursor]):  # если во вложенном списке элементы закончились,
 			
 			self.main_list_cursor += 1       # то переходи на следующий список увеличив main_list_cursor
-			self.nested_list_cursor = -1     # и обнуляем main_list_cursor
+			self.nested_list_cursor = 0     # и обнуляем main_list_cursor
 
 		if self.main_list_cursor  >= len(self.main_list):
 			raise StopIteration
@@ -50,7 +50,6 @@ def test_1():
 
     assert list(FlatIterator(list_of_lists_1)) == ['a', 'b', 'c', 'd', 'e', 'f', 'h', False, 1, 2, None]
 
-
 if __name__ == '__main__':
-    
+    test_1()
     print(list(FlatIterator(list_of_lists_1)))

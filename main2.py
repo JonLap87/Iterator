@@ -6,11 +6,9 @@ list_of_lists_1 = [
  ]
 
 def flat_generator(list_of_lists):
-	list_1 = []
 	for element in list_of_lists:
 		for el in element:
-			list_1.append(el)
-			yield list_1
+			yield el
 
 def test_2():
 	
@@ -29,5 +27,6 @@ def test_2():
 
 
 if __name__ == '__main__':
-
-    print(list(flat_generator(list_of_lists_1)))
+	test_2()
+	print(list(flat_generator(list_of_lists_1)))
+    
